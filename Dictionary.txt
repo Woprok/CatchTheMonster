@@ -1,0 +1,11 @@
+Jednotlivé príkazy v slovenčine:
+climb - šplhať
+fly - letieť
+walk - kráčať
+swim - plávať
+up - hore
+down - dole
+left - doľava, vľavo
+right - doprava, vpravo
+go - choď
+run - bežať

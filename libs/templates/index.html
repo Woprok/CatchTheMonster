@@ -1,0 +1,10 @@
+<div id="game_presenter" style="white-space: pre-wrap">Loading game...</div>
+<script>
+    var game_presenter = document.getElementById("game_presenter");
+    setInterval(() => {
+        fetch("{{ url_for('GameState:State_Update') }}")
+        .then(response => {
+                response.text().then(t => {game_presenter.innerHTML = t})
+            });
+        }, 50);  
+</script>

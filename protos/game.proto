@@ -1,0 +1,38 @@
+syntax = "proto3";
+package google.protobuf;
+
+message GameStateResponse
+{
+	string MapPlan = 1;
+  string ScoreBoard = 2;
+  repeated string PlayerScore = 3;
+  string Info = 4;
+}
+
+message GameStateRequest
+{
+  int32 PlayerId = 1;
+	bool GetState = 2;
+}
+
+message GameTurnResponse
+{
+	bool Accepted = 1;
+  string DebugDump = 2;
+}
+
+message GameTurnRequest
+{
+  int32 PlayerId = 1;
+  string DebugDump = 2;
+	bytes VoiceData = 3;
+}
+
+
+// Service for sending game data
+service GameProvider {
+  // Request game state method using Request Response
+  rpc RequestStateUpdate (GameStateRequest) returns (GameStateResponse) {}
+  // Request to acknowledge turn method using Request Response
+  rpc RequestTurn (GameTurnRequest) returns (GameTurnResponse) {}
+}

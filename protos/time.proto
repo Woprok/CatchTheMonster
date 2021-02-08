@@ -1,0 +1,34 @@
+syntax = "proto3";
+package google.protobuf;
+
+message TimeResponse
+{
+	int32 Seconds = 1;               // Seconds (0-60)
+	int32 Minutes = 2;               // Minutes (0-59)
+	int32 Hours = 3;                 // Hours (0-23)
+	int32 Day = 4;                   // Day of the month (1-31)
+	int32 Month = 5;                 // Month (0-11)
+	int32 Year = 6;                  // Year
+	int32 DayOfWeek = 7;             // Day of the week (0-6, Sunday = 0)
+	int32 DayOfYear = 8;             // Day in the year (0-365, 1 Jan = 0)
+	int32 IsDaylightSavingTime = 9; // Daylight saving time
+}
+
+message TimeRequest
+{
+	bool Seconds = 1;               // Seconds (0-60)
+	bool Minutes = 2;               // Minutes (0-59)
+	bool Hours = 3;                 // Hours (0-23)
+	bool Day = 4;                   // Day of the month (1-31)
+	bool Month = 5;                 // Month (0-11)
+	bool Year = 6;                  // Year
+	bool DayOfWeek = 7;             // Day of the week (0-6, Sunday = 0)
+	bool DayOfYear = 8;             // Day in the year (0-365, 1 Jan = 0)
+	bool IsDaylightSavingTime = 9; // Daylight saving time
+}
+
+// Service for sending time
+service TimeRequestProvider {
+  // Request time method using Request Response
+  rpc RequestTime (TimeRequest) returns (TimeResponse) {}
+}

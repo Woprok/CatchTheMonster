@@ -1,0 +1,27 @@
+# Python compilation cache.
+__pycache__
+
+# Python virtual environment.
+.venv
+
+# Generated files.
+google
+*_pb2.py
+*_pb2_grpc.py
+
+
+# Additional repositories.
+googleapis
+
+# Server Certificates
+server.crt
+server.key
+
+# Google Account
+*.json
+
+# Resources
+*.wav
+
+# Web trash ignore
+# hopefully none is required

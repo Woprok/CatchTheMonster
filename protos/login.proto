@@ -1,0 +1,22 @@
+syntax = "proto3";
+package google.protobuf;
+
+message LoginRequest
+{
+    string Username = 1;             // String containing username.
+    string Avatar = 2;               // Avatar for visual representation, can be empty.
+}
+
+message LoginResponse
+{
+	bool IsSuccess = 1;               // Self explanatory.
+	string Username = 2;              // Username in question.
+  string Avatar = 3;                // Avatar for visual representation.
+	int32 PlayerId = 4;               // PlayerId for user to use.
+}
+
+// Service for sending login request
+service LoginRequestProvider {
+  // Request acknowledgment by server using Request Response
+  rpc RequestLogin (LoginRequest) returns (LoginResponse) {}
+}
