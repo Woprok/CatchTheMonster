@@ -141,7 +141,7 @@ Move direction (one or two): up, down, left, right
 Now go fetch me some monsters by going one cell within them.  
 
 ### Map Documentation
-Initialize map of labyrinth from the file  
+Initialize map of labyrinth from the file specified in configuration  
 File structure is:  
 >Width == x  
 >Height == y  
