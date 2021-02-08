@@ -70,7 +70,7 @@ class GameStateManager():
         print(f'Transcribed text {id}: {voice_text}')
         translated_text = self.cloud_manager.translate(voice_text)
         if translated_text == None:
-            return None
+            return voice_text
         print(f'Translated text {id}: {translated_text}')
         return translated_text
 
