@@ -136,7 +136,7 @@ Run Server (create certificate and google cloud account (get project_id and acco
 Client will ask for username, type something...  
 Client will ask for emoji, leave empty or type emoji if your terminal can handle it (https://unicode.org/emoji/charts/full-emoji-list.html)  
 Then use following commands to move your avatar around the map:  
-Move type (one): climb, fly, walk, swim  
+Move type (one): climb(land obstacle), fly(fly obstacle), walk(free land), swim(water)  
 Move direction (one or two): up, down, left, right  
 Now go fetch me some monsters by going one cell within them.  
 
@@ -150,7 +150,7 @@ File structure is:
 >Fly_Mobs_Spawn_Count  
 >x * y map plan with symbols:   
 >>X (Border around the map)  
->>O (Obstacle for land and water mobs)  
->>S (Obstacle for fly mob)  
->>W (Water)  
->>. (or any other symbol that is not registred is free land)  
+>>O (Obstacle for land and water mobs, player has to climb)  
+>>S (Obstacle for fly mob, player has to fly)  
+>>W (Water, player has to swim)  
+>>. (or any other symbol that is not registred is free land, player has to walk)  
