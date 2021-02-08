@@ -106,26 +106,51 @@ Extending this part should be trivial if you spent few hours learning flask...
 }
 ```
 ### Dev Short Documentation
-See CatchTheMonster_Diagram.png (simplified mix between component & connector and decomposition viewpoints) and source code...
-Client - Server application that uses GRPC for communication.
-Webclient - Server uses Flask for communication
-Cloud is part of Google Cloud Services...
+See CatchTheMonster_Diagram.png (simplified mix between component & connector and decomposition viewpoints) and source code...  
+Client - Server application that uses GRPC for communication.  
+Webclient - Server uses Flask for communication  
+Cloud is part of Google Cloud Services...  
 
-Short test apps are localed it tests and should be used for extended debuging of smaller parts of whole software...
+Short test apps are localed it tests and should be used for extended debuging of smaller parts of whole software...  
 
-configuration_provider.py -> handles loading configuration.
-client_manager.py -> holds all components of client and provides simple voice capture and sending to server logic. 
-server_manager.py -> holds all components of server.
-cloud_manager.py -> handles google api communication for transcribe and translate.
+configuration_provider.py -> handles loading configuration.  
+client_manager.py -> holds all components of client and provides simple voice capture and sending to server logic.   
+server_manager.py -> holds all components of server.  
+cloud_manager.py -> handles google api communication for transcribe and translate.  
 
-grpc_*_services.py -> holds specific code for services.
+grpc_*_services.py -> holds specific code for services.  
 
-catch_game.py -> holds all game logic and entity definitions. All entities are derived from class Tile. Creature Tile is interface for creatures. Labyrinth class is responsible for all game logic calls.
+catch_game.py -> holds all game logic and entity definitions. All entities are derived from class Tile. Creature Tile is interface for creatures. Labyrinth class is responsible for all game logic calls.  
 
-game_state_manager.py -> holds all responsibility on server for managing the game and preventing race conditions...
+game_state_manager.py -> holds all responsibility on server for managing the game and preventing race conditions...  
 
-audio_capturer.py -> simple use of pyAudio for recording microphone input.
+audio_capturer.py -> simple use of pyAudio for recording microphone input.  
 
-web_service.py -> simple service that ask for current game state.
+web_service.py -> simple service that ask for current game state.  
 
-execute_client, execute_server -> program starting points
+execute_client, execute_server -> program starting points  
+
+### User Documentation
+Run Server (create certificate and google cloud account (get project_id and account credentials in form of account.json)), Webclient (open webpage with server ip), Client  
+
+Client will ask for username, type something...  
+Client will ask for emoji, leave empty or type emoji if your terminal can handle it (https://unicode.org/emoji/charts/full-emoji-list.html)  
+Then use following commands to move your avatar around the map:  
+Move type (one): climb, fly, walk, swim  
+Move direction (one or two): up, down, left, right  
+Now go fetch me some monsters by going one cell within them.  
+
+### Map Documentation
+Initialize map of labyrinth from the file  
+File structure is:  
+    Width == x  
+    Height == y  
+    Land_Mobs_Spawn_Count  
+    Water_Mobs_Spawn_Count  
+    Fly_Mobs_Spawn_Count  
+    x * y map plan with symbols:   
+        X (Border around the map)  
+        O (Obstacle for land and water mobs)  
+        S (Obstacle for fly mob)  
+        W (Water)  
+        . (or any other symbol that is not registred is free land)  
