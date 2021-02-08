@@ -102,7 +102,7 @@ Extending this part should be trivial if you spent few hours learning flask...
     "turn_time": "10", # in seconds
     "certificate_key": "server.key",
     "certificate_crt": "server.crt",
-    "map_data_key": "map.data" # create your own map, see catch_game.py for description
+    "map_data_key": "map.data" # create your own map, for description see catch_game.py or map documentation
 }
 ```
 ### Dev Short Documentation
@@ -149,8 +149,8 @@ File structure is:
     Water_Mobs_Spawn_Count  
     Fly_Mobs_Spawn_Count  
     x * y map plan with symbols:   
-        X (Border around the map)  
-        O (Obstacle for land and water mobs)  
-        S (Obstacle for fly mob)  
-        W (Water)  
-        . (or any other symbol that is not registred is free land)  
+\t\tX (Border around the map)  
+\t\tO (Obstacle for land and water mobs)  
+\t\tS (Obstacle for fly mob)  
+\t\tW (Water)  
+\t\t. (or any other symbol that is not registred is free land)  
