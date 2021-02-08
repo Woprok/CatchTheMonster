@@ -143,14 +143,14 @@ Now go fetch me some monsters by going one cell within them.
 ### Map Documentation
 Initialize map of labyrinth from the file  
 File structure is:  
-    Width == x  
-    Height == y  
-    Land_Mobs_Spawn_Count  
-    Water_Mobs_Spawn_Count  
-    Fly_Mobs_Spawn_Count  
-    x * y map plan with symbols:   
-\t\tX (Border around the map)  
-\t\tO (Obstacle for land and water mobs)  
-\t\tS (Obstacle for fly mob)  
-\t\tW (Water)  
-\t\t. (or any other symbol that is not registred is free land)  
+>Width == x  
+>Height == y  
+>Land_Mobs_Spawn_Count  
+>Water_Mobs_Spawn_Count  
+>Fly_Mobs_Spawn_Count  
+>x * y map plan with symbols:   
+>>X (Border around the map)  
+>>O (Obstacle for land and water mobs)  
+>>S (Obstacle for fly mob)  
+>>W (Water)  
+>>. (or any other symbol that is not registred is free land)  
