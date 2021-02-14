@@ -7,6 +7,8 @@ class ConfigurationProvider():
     """
     # Keys
     SERVER_ADDRESS_KEY = 'server_address'
+    WEBSERVER_ADDRESS_KEY = 'web_address'
+    WEBSERVER_PORT_KEY = 'web_port'
     GOOGLE_ACCOUNT_KEY = 'cloud_account'
     GOOGLE_PROJECT_ID_KEY = 'cloud_project'
     GOOGLE_LOCATION_KEY = 'cloud_location'
@@ -19,6 +21,8 @@ class ConfigurationProvider():
     MAP_PLAN_FILENAME_KEY = 'map_data_key'
     # Default Values
     SERVER_ADDRESS_VALUE = 'localhost:8888'
+    WEBSERVER_ADDRESS_VALUE = 'localhost'
+    WEBSERVER_PORT_VALUE = '5001'
     GOOGLE_ACCOUNT_VALUE = 'account.json'
     GOOGLE_PROJECT_ID_VALUE = 'UNDEFINED'
     GOOGLE_LOCATION_VALUE = 'global'
@@ -56,6 +60,8 @@ class ConfigurationProvider():
         """
         self.data = {
             ConfigurationProvider.SERVER_ADDRESS_KEY: ConfigurationProvider.SERVER_ADDRESS_VALUE,
+            ConfigurationProvider.WEBSERVER_ADDRESS_KEY: ConfigurationProvider.WEBSERVER_ADDRESS_VALUE,
+            ConfigurationProvider.WEBSERVER_PORT_KEY: ConfigurationProvider.WEBSERVER_PORT_VALUE,
             ConfigurationProvider.GOOGLE_ACCOUNT_KEY : ConfigurationProvider.GOOGLE_ACCOUNT_VALUE,
             ConfigurationProvider.GOOGLE_PROJECT_ID_KEY : ConfigurationProvider.GOOGLE_PROJECT_ID_VALUE,
             ConfigurationProvider.GOOGLE_LOCATION_KEY : ConfigurationProvider.GOOGLE_LOCATION_VALUE,

@@ -13,16 +13,18 @@ class Data():
         self.service = serv        
 
 class WebService():
-    def __init__(self, game_state_manager):
+    def __init__(self, game_state_manager, def_web_address, def_web_port):
         print("Initializing flask web service")
         self.app = Flask(__name__)
+        self.web_address = def_web_address 
+        self.web_port = def_web_port
         log = logging.getLogger('werkzeug')
         log.disabled = True
         Data.set_service(game_state_manager)
         GameState.register(self.app, route_base = '/')
 
     def start_presenting(self):
-        self.app.run() #debug=True, threaded=True
+        self.app.run(host=self.web_address, port=self.web_port) #debug=True, threaded=True
 
 class GameState(FlaskView):
     web_service_game_state_provider = None

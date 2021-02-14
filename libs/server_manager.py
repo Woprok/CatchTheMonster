@@ -23,12 +23,12 @@ class ServerManager():
         self.server.add_secure_port(server_address, self.credentials)
         self.cloud_manager = cloud
 
-    def InitializeProviders(self, map_file, turn_timer):
+    def InitializeProviders(self, map_file, turn_timer, web_address, web_port):
         """
         Actual objects that do something...
         """
         self.game_state_manager = GameStateManager(self.cloud_manager, map_file, turn_timer)
-        self.web_service = WebService(self.game_state_manager)
+        self.web_service = WebService(self.game_state_manager, web_address, web_port)
         print("Initializing grpc services")
         add_TimeRequestProviderServicer_to_server(TimeRequestProviderServerServicer(), self.server)
         add_LoginRequestProviderServicer_to_server(LoginRequestProviderServerServicer(self.game_state_manager), self.server)

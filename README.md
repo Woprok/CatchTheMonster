@@ -66,9 +66,13 @@ protoc --plugin=protoc-gen-grpc=$(pkg-config --variable=prefix grpc++)/bin/grpc_
 Afterwards you can use venv to get all other required packages...
 ```
 python -m venv .venv 
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 . .venv/bin/activate
 pip install -r requirements.txt
+```
+These two might be helpful if you are using windows:
+```
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 ```
 ### Running server
 ```
@@ -91,7 +95,7 @@ Share by both client and server. Most values are used only by server.
 ```
     "server_address": "localhost:8888", # grpc server ip and port configuration.   
     "web_address" : "localhost" # defines ip address used by WebService.   
-    "web_port" : "5000" # defines port used by WebService.   
+    "web_port" : "5001" # defines port used by WebService.   
     "cloud_account": "account.json", # see Google Cloud Api, this is private and can't be shared.   
     "cloud_project": "text-text-numbers", # see Google Cloud Api, this is private and can't be shared.   
     "cloud_location": "global", # keep this value as other might not work with all cloud api.  

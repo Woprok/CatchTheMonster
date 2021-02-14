@@ -23,7 +23,8 @@ cloud.create_channels()
 
 print('Initializing server connection:')
 server = ServerManager(cfg[CfgP.SERVER_ADDRESS_KEY], certificate_key, certificate_crt, cloud)
-server.InitializeProviders(cfg[CfgP.MAP_PLAN_FILENAME_KEY], int(cfg[CfgP.TURN_CAPTURE_TIME_KEY]))
+server.InitializeProviders(cfg[CfgP.MAP_PLAN_FILENAME_KEY], int(cfg[CfgP.TURN_CAPTURE_TIME_KEY]), 
+    cfg[CfgP.WEBSERVER_ADDRESS_KEY], int(cfg[CfgP.WEBSERVER_PORT_KEY]))
 server.Execute()
 
 #--------------------
