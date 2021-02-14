@@ -19,8 +19,19 @@ Troubleshoot using google, actually a lot of google might be required...
 Compiling proto files to python source code requires C++ version of the library as well.
 ### Google Cloud Api
 Application uses Google Cloud Api https://cloud.google.com/
-Register and create project that enables speech api and translation api.
-Download credentials, they are required by server.
+Register and create project that enables speech api and translation api. 
+Download credentials, they are required by server. 
+> Open & create account (it has free limits) https://cloud.google.com/
+> A. New project
+> B. Api & Services -> Enable Apis and Services
+>> 1. search, select, enable Cloud Speech-to-Text API
+>> 2. search, select, enable Cloud Translation API
+>> 3. search, select, enable Compute Engine API
+> C. Credentials
+>> 1. Create credentials -> Create API key
+>> 2. Create credentials -> Create service account (Role: owner)
+>> 3. Manage service account -> Actions -> Create key -> Choose JSON
+> D. Home -> Select project -> See Project Info from dashboard page of project for Project ID
 Get current version from github and compile it as following:
 ```
 git clone http://github.com/googleapis/googleapis.git
