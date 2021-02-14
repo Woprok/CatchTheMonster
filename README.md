@@ -28,12 +28,15 @@ B. Api & Services -> Enable Apis and Services
 > 1. search, select, enable Cloud Speech-to-Text API  
 > 2. search, select, enable Cloud Translation API  
 > 3. search, select, enable Compute Engine API  
+   
 C. Credentials  
 > 1. Create credentials -> Create API key  
 > 2. Create credentials -> Create service account (Role: owner)  
 > 3. Manage service account -> Actions -> Create key -> Choose JSON  
+  
 D. Home -> Select project -> See Project Info from dashboard page of project for Project ID  
-Get current version from github and compile it as following:
+  
+Get current version of API from github and compile it as following:
 ```
 git clone http://github.com/googleapis/googleapis.git
 cd googleapis
