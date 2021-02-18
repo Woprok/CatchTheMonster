@@ -215,7 +215,8 @@ There are different types of mobs:
 - Land mob (moves on land)    
 - Water mob (moves on water)    
 - Fly mob (moves everywhere, but fly osbtacle tiles)    
-All mobs move randomly on their allowed tile types.
+  
+All mobs move randomly on their allowed tile types.   
 
 Player and Mobs are spawned randomly on the map.   
 
