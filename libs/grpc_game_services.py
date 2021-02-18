@@ -28,12 +28,12 @@ class GameProviderServerServicer(GameProviderServicer):
         self.game_manager = game_state_manager
 
     def RequestStateUpdate(self, request, context):
-        #print("Request", game_state_request_to_string(request))
+        print("Request", game_state_request_to_string(request))
         response = self.game_manager.on_game_state_request(request) 
-        #print("Response\n", game_state_response_to_string(response))
+        print("Response\n", game_state_response_to_string(response))
         return response
     def RequestTurn(self, request, context):
-        #print("Request", game_turn_request_to_string(request))
+        print("Request", game_turn_request_to_string(request))
         response = self.game_manager.on_game_turn_request(request) 
         print("Response", game_turn_response_string(response))
         return response
@@ -71,7 +71,7 @@ def create_game_turn_request(player_id, debug_dump, voice_data):
 
 # Client Message Spamer
 def game_state_request(stub, request):
-        # print(game_state_request_to_string(request))
+        print(game_state_request_to_string(request))
         # Call the service through the stub object.
         response = stub.RequestStateUpdate(request)
         print(game_state_reduced_response_to_string(response))
