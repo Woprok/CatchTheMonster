@@ -216,7 +216,7 @@ There are different types of mobs:
 - Water mob (moves on water)    
 - Fly mob (moves everywhere, but fly osbtacle tiles)    
 
-Player and Mobs are spawned randomly on the map...   
+Player and Mobs are spawned randomly on the map.   
 
 Now you can go catch monsters by going one cell within them.   
 
