@@ -211,7 +211,14 @@ Move direction: up, down, left, right (All values entered are used. up + down wo
 Correct pronunciation is required and it might require multiple attempts to figure out how to say it correctly in different languages.
 See Dictionary.txt for Slovak translation. Commands in slovak would be for example: "plávať hore", which will be processed as "swim up" and will cause player avatar to move up, if tile above his current position is water.  
 
-Now you can go catch monsters by going one cell within them.  
+There are different types of mobs:    
+- Land mob (moves on land)    
+- Water mob (moves on water)    
+- Fly mob (moves everywhere, but fly osbtacle tiles)    
+
+Player and Mobs are spawned randomly on the map...   
+
+Now you can go catch monsters by going one cell within them.   
 
 ### Map Documentation
 Initialize map of labyrinth from the file specified in configuration by default "map.data"
